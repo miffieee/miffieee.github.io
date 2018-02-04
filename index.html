@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<!-- Instructions: Add a link to the stylesheet 'styles.css' at the designated spot below. -->
+
+<!-- Hints:
+
+* sample link: <link href="path-to-stylesheet/stylesheet.css" rel="stylesheet">
+* path to stylesheet: "css/styles.css"
+
+-->
+
+<html>
+<head>
+	<title>Alisha Zhang</title>
+
+<style>
+
+/* Background color is black */
+		body {
+			background-color: black;
+		}
+
+/* Video formatting */
+		.container {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			padding:0;
+			margin:0;
+			right: 0px;
+			bottom: 0px;
+			z-index: -1000;
+			overflow: hidden;
+		}
+
+		#choeuram {
+      position: absolute;
+    	right: -570px;
+    	bottom: 0px;
+			overflow: hidden;
+		}
+
+/* Center text box */
+	div.transtxtbox {
+		position: absolute;
+  	margin: 0 auto;
+		width: 90%;
+		top: 25%;
+  	background-color: rgba(0,0,0,0.7);
+  	opacity: 1;
+  	filter: alpha(opacity=90); /* For IE8 and earlier */
+		font-family: helvetica, arial, sans-serif;
+		z-index: -20;
+	}
+
+	div.transtxtbox article {
+		text-align: center;
+	}
+
+/* Text in text box */
+	div.transtxtbox h1 {
+		color: #EFF4FA;
+		margin-bottom: 0.5em;
+	}
+
+	div.transtxtbox p {
+  	color: #D2D5DA;
+		margin-bottom: 71px;
+	}
+
+/* Dropdown menu */
+	.dropdown {
+		position: absolute;
+		margin: 15px;
+		top: 10px;
+		cursor: pointer;
+	}
+
+	.dropimg {
+		opacity: 0.8;
+	}
+	.dropimg:hover, .dropimg:active, .dropimg:focus {
+		opacity: 0.65;
+	}
+
+	.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #191919;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 3;
+	}
+
+	.dropdown-content a {
+		color: #EFF4FA;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		font-family: helvetica, arial, sans-serif;
+	}
+
+	.dropdown-content a:hover {background-color: #262626}
+
+	.show {display:block;}
+
+
+/* Creating a container for the text on the right side of the page */
+	.rightside {
+		position:absolute;
+		width: 700px;
+		height: 100%;
+		margin: 0 auto;
+	}
+
+/* Down button to go to the next page */
+	.downbtndiv {
+		position: absolute;
+		bottom: 10%;
+		margin-left: 42%;
+	}
+
+	#downbtn:hover {
+		cursor: pointer;
+	}
+
+
+</style>
+
+</head>
+
+
+
+
+
+
+
+
+<body>
+
+<!-- Creating video background -->
+<div class = "container">
+	<video autoplay loop id="choeuram">
+		<source src= "repeatchoeuram.mp4" type="video/mp4">
+		<source src= "repeatchoeuram.ogg" type="video/ogg">
+		Your browser does not support the video tag.
+	</video>
+</div>
+
+
+<div class="rightside">
+<!-- Creating dropdown menu -->
+<header>
+	<div class="dropdown">
+  	<img src="icon-png2x.png" alt="menuNavicon" onclick="dropDownMenu()" class="dropimg">
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Experience</a>
+		<a href="#">Education</a>
+		<a href="#">Hobbies</a>
+		<a href="#">Bunny Game</a>
+  </div>
+	</div>
+</header>
+
+
+<!-- Creating textbox -->
+<div class="transtxtbox">
+	<article id="Home">
+		<h1 style = "font-size:72px">Alisha Zhang</h1>
+  	<p style = "font-size:28px">-newbie web developer-
+			<br>-future world traveller-
+			<br>-dessert enthusiast-
+		</p>
+	</article>
+</div>
+
+<div class=downbtndiv>
+	<img src="icons8-sort-down-filled-80.png" height="40" width = "60"
+	alt="Next Page" onclick="scrollDownButton" id="downbtn">
+</div>
+
+</div>
+
+
+
+
+<script>
+
+// Dropdown menu function
+function dropDownMenu() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropimg')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+// Scroll down button
+function scollDownButton() {
+		document.getElementById("downButton").onclick
+}
+
+</script>
+
+
+</body>
+</html>
