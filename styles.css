@@ -3,10 +3,12 @@
 /* Background color is black */
 	body {
 		background-color: black;
+		height: 0px;
+		margin: 0px;
 	}
 
-/* Video formatting */
-	.container {
+/* Background video formatting */
+	.backgrounddiv {
 		width: 100%;
 		height: 100%;
 		position: absolute;
@@ -14,7 +16,7 @@
 		margin:0;
 		right: 0px;
 		bottom: 0px;
-		z-index: -1000;
+		z-index: -100;
 		overflow: hidden;
 	}
 
@@ -25,33 +27,15 @@
 		overflow: hidden;
 	}
 
-/* Center text box */
-	div.transtxtbox {
-		position: absolute;
-  	margin: 0 auto;
-		width: 90%;
-		top: 25%;
-  	background-color: rgba(0,0,0,0.7);
-  	opacity: 1;
-  	filter: alpha(opacity=90); /* For IE8 and earlier */
-		font-family: helvetica, arial, sans-serif;
-		z-index: -20;
-	}
-
-	div.transtxtbox article {
-		text-align: center;
-	}
-
-/* Text in text box */
-	div.transtxtbox h1 {
-		color: #EFF4FA;
-		margin-bottom: 0.5em;
-	}
-
-	div.transtxtbox p {
-  	color: #D2D5DA;
-		margin-bottom: 71px;
-	}
+/* Creating the menu */
+  #headermenu {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    z-index: 101;
+  }
 
 /* Dropdown menu */
 	.dropdown {
@@ -62,48 +46,321 @@
 	}
 
 	.dropimg {
-		opacity: 0.8;
-	}
-	.dropimg:hover, .dropimg:active, .dropimg:focus {
-		opacity: 0.65;
-	}
+  	opacity: 0.6;
+  }
 
-	.dropdown-content {
+  .dropimg:hover, .dropimg:active, .dropimg:focus {
+  	opacity: 0.4;
+  }
+
+  .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #191919;
+    background-color: #1C1C1C;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 3;
-	}
+  }
 
-	.dropdown-content a {
-		color: #EFF4FA;
-		padding: 12px 16px;
-		text-decoration: none;
-		display: block;
-		font-family: helvetica, arial, sans-serif;
-	}
+  .dropdown-content a {
+  	color: #EFF4FA;
+  	padding: 12px 16px;
+  	text-decoration: none;
+  	display: block;
+  	font-family: raleway, helvetica, arial, sans-serif;
+  }
 
-	.dropdown-content a:hover {background-color: #303030}
+  .dropdown-content a:hover {background-color: #303030}
 
 	.show {display:block;}
 
-/* Creating a container for the text on the right side of the page */
-	.leftside {
-		position:absolute;
-		width: 700px;
+/* Gradient black bar on top and bottom */
+	.navblackbar  {
+		position: absolute;
+		width: 100%;
+		background-color: black;
+		z-index:100;
+		height: 50px;
+	}
+
+	.navblackbar:hover {
+		cursor: pointer;
+	}
+
+	#upblackbar {
+		top: 0px;
+		background: linear-gradient(
+			rgba(0,0,0,0.97) 5%,
+			rgba(0,0,0,0.95) 15%,
+			rgba(0,0,0,0.92) 20%,
+			rgba(0,0,0,0.90) 25%,
+			rgba(0,0,0,0.80) 75%,
+			rgba(0,0,0,0.75) 80%,
+			rgba(0,0,0,0.65) 85%,
+			rgba(0,0,0,0.5) 90%,
+			rgba(0,0,0,0.3) 95%,
+			rgba(0,0,0,0.2) 100%
+			);
+	}
+
+	#downblackbar {
+		bottom: 0px;
+		background: linear-gradient(
+			rgba(0,0,0,0.2) 0%,
+			rgba(0,0,0,0.3) 5%,
+			rgba(0,0,0,0.5) 10%,
+			rgba(0,0,0,0.65) 15%,
+			rgba(0,0,0,0.75) 20%,
+			rgba(0,0,0,0.8) 25%,
+			rgba(0,0,0,0.9) 75%,
+			rgba(0,0,0,0.92) 80%,
+			rgba(0,0,0,0.95) 85%,
+			rgba(0,0,0,0.97) 95%
+			);
+	}
+
+/* Navigation buttons */
+	#downbutton {
+		position: absolute;
+		margin-left: 422px;
+		opacity: 0.7;
+		z-index: 70;
+		transition-property: opacity;
+		transition-duration: 0.1s;
+		transition-timing-function: linear;
+	}
+
+	#upbutton {
+		position: absolute;
+		margin-left: 422px;
+		opacity: 0.7;
+		top: 6%;
+		z-index:70;
+		transition-property: opacity;
+		transition-duration: 0.1s;
+		transition-timing-function: linear;
+	}
+
+	.navblackbar:hover #downbutton{
+		opacity: 0.4;
+	}
+
+	.navblackbar:hover #upbutton{
+		opacity: 0.4;
+	}
+
+/* Youtube Icon */
+	#YoutubeIcon {
+		position: absolute;
+		bottom: 0px;
+		right: 10px;
+		z-index: 600;
+	}
+
+	#YoutubeIcon:hover {
+		background-color: black;
+		opacity: 0.6;
+	}
+
+/* Creating a scrollable container for all of the page */
+	.scrollallpage {
+		position: absolute;
+		width: 100%;
 		height: 100%;
 		margin: 0 auto;
+    z-index: 0;
+    overflow: scroll;
 	}
 
-/* Down button to go to the next page */
-	.downbtndiv {
-		position: absolute;
-		bottom: 10%;
-		margin-left: 42%;
+	.scrollallpage::-webkit-scrollbar {
+		display:none;
 	}
 
-	#downbtn:hover {
-		cursor: pointer;
+/* Left text box */
+  #lefttextbox {
+    width: 700px;
+    height: 5600px;
+  }
+
+/* All text box formatting */
+	div.transtxtbox {
+		position: relative;
+		margin: 0 auto;
+		width: 90%;
+		left: 88px;
+		padding: 50px;
+		background-color: rgba(0,0,0,0.8);
+  	opacity: 1;
+  	filter: alpha(opacity=90);
+		font-family: raleway, helvetica, arial, sans-serif;
+		border: 1px solid #494949; /* Temporary border to be deleted */
+	}
+
+	div.transtxtbox h1 {
+		color: #EFF4FA;
+		text-align: center;
+	}
+
+	div.transtxtbox p, ul {
+		color:#D2D5DA;
+	}
+
+/* Importing raleway font */
+	 @font-face {
+	   font-family: raleway;
+	   src: url(raleway/Raleway-Light.ttf)
+	 }
+
+	@font-face {
+		font-family: ralewaybold;
+		src: url(raleway/Raleway-Medium.ttf)
+	}
+
+/* Text box & down button # 1 ("Home") formatting */
+	#transtxtbox1 {
+		top: 120px;
+	}
+
+	#transtxtbox1 article {
+		text-align: center;
+		padding-top: 0px;
+	}
+
+	#transtxtbox1 h1 {
+		margin-bottom: 0px;
+	}
+
+	#transtxtbox1 p {
+		margin-bottom: 71px;
+	}
+
+/* Text box & down button #2 ("About") Formatting */
+  #transtxtbox2 {
+		top: 500px;
+	}
+
+	#transtxtbox2 h1 {
+		margin-bottom: 0.5em;
+	}
+
+	#transtxtbox2 p {
+		margin-bottom: 71px;
+		text-align: justify;
+	}
+
+  #About {
+  	color: #D2D5DA;
+  }
+
+	#downbtndiv2 {
+		top: 600px;
+	}
+
+/* Text box & down button #3 ("Experience") Formatting */
+	#transtxtbox3 {
+		top: 880px;
+	}
+
+	#transtxtbox3 h1 {
+		margin-top: 15px;
+		margin-bottom: 0.5em;
+	}
+
+	#transtxtbox3 p {
+		margin-bottom: 15px;
+		text-align: justify;
+	}
+
+/* Text box & down button #4 ("Education") Formatting */
+	#transtxtbox4 {
+		top: 1260px;
+	}
+
+	#transtxtbox4 h1 {
+		margin-bottom: 0.5em;
+		margin-top: 20px;
+	}
+
+	#transtxtbox4 p {
+		margin-bottom: 25px;
+		text-align: justify;
+	}
+
+/* Text box & down button #5 ("Hobbies") Formatting */
+	#transtxtbox5 {
+		top: 1640px;
+	}
+
+	#transtxtbox5 h1 {
+		margin-bottom: 0.5em;
+	}
+
+	#transtxtbox5 ul {
+		margin-bottom: 71px;
+		text-align: left;
+	}
+
+	#boldhobbies {
+		font-family: ralewaybold;
+		font-weight: bolder;
+	}
+
+/* Text box & down button #6 ("Contact") Formatting */
+	#transtxtbox6 {
+		top: 2020px;
+	}
+
+	#transtxtbox6 h1 {
+		margin-bottom: 0.5em;
+		margin-top: 0px;
+	}
+
+	#transtxtbox6 p {
+		margin-bottom: 30px;
+		text-align: left;
+	}
+
+/* Contact submission form */
+	input[type=text], select, textarea {
+	  width: 80%;
+	  padding: 8px;
+		padding-left: 12px;
+	  border: 1px solid #494949;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	  margin-top: 6px;
+	  margin-bottom: 16px;
+	  resize: vertical;
+		float: right;
+		background: rgba(255,255,255,0.4);
+		color: #D2D5DA;
+		font-size: 18px;
+	}
+
+	label {
+		text-align: right;
+		padding: 12px;
+		margin-top: 6px;
+		margin-bottom: 16px;
+		color: #D2D5DA;
+	}
+
+	input[type=submit] {
+	  background-color: #0C0C0C;
+	  color: white;
+	  padding: 12px 20px;
+	  border: none;
+	  border-radius: 4px;
+	  cursor: pointer;
+	}
+
+	input[type=submit]:hover {
+	  background-color: #1C1C1C;
+	}
+
+	.submitform {
+  	border-radius: 5px;
+  	background: rgba(128,128,128,0.4);
+  	padding: 20px;
+		height: 300px;
 	}
