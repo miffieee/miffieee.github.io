@@ -14,49 +14,177 @@
 	<link rel="stylesheet" type="text/css" href="https://rawgit.com/miffieee/miffieee.github.io/master/styles.css">
 	<script src="https://rawgit.com/miffieee/miffieee.github.io/master/myscripts.js"></script>
 </head>
-
-<body>
+	
 <!-- Creating video background -->
-<div class = "container">
+<div class = "backgrounddiv">
 	<video autoplay loop id="choeuram">
-		<source src= "//raw.githubusercontent.com/miffieee/miffieee.github.io/master/repeatchoeuram.mp4" type="video/mp4">
-		<source src= "//raw.githubusercontent.com/miffieee/miffieee.github.io/master/repeatchoeuram.ogg" type="video/ogg">
+		<source src= "//raw.githubusercontent.com/miffieee/miffieee.github.io/master/Media/repeatchoeuram.mp4" type="video/mp4">
+		<source src= "//raw.githubusercontent.com/miffieee/miffieee.github.io/master/Media/repeatchoeuram.ogg" type="video/ogg">
 		Your browser does not support the video tag.
 	</video>
 </div>
 
-<div class="leftside">
 <!-- Creating dropdown menu -->
-<header>
-	<div class="dropdown">
-  	<img src="//raw.githubusercontent.com/miffieee/miffieee.github.io/master/icon-png2x.png" alt="menuNavicon" onclick="dropDownMenu()" class="dropimg">
+<div id="headermenu">
+  <div class="dropdown">
+  	<img src="//raw.githubusercontent.com/miffieee/miffieee.github.io/master/Media/menuicon.png" alt="menuNavicon" onclick="dropDownMenu()" class="dropimg">
   <div id="myDropdown" class="dropdown-content">
     <a href="#">Home</a>
     <a href="#">About</a>
     <a href="#">Experience</a>
-		<a href="#">Education</a>
-		<a href="#">Hobbies</a>
-		<a href="#">Bunny Game</a>
+  	<a href="#">Education</a>
+  	<a href="#">Hobbies</a>
+  	<a href="#">Contact</a>
   </div>
 	</div>
-</header>
-
-<!-- Creating textbox -->
-<div class="transtxtbox">
-	<article id="Home">
-		<h1 style = "font-size:72px">Alisha Zhang</h1>
-  	<p style = "font-size:28px">-newbie web developer-
-			<br>-future world traveller-
-			<br>-dessert enthusiast-
-		</p>
-	</article>
 </div>
 
-<!-- Creating down button -->
-<div class=downbtndiv>
-	<img src="//raw.githubusercontent.com/miffieee/miffieee.github.io/master/icons8-sort-down-filled-80.png" height="40" width = "60"
-	alt="Next Page" onclick="scrollDownButton" id="downbtn">
+<!-- Creating black fading bar & down button -->
+<div class="navblackbar" id="downblackbar">
+	<div id="downbutton">
+		<img src="//raw.githubusercontent.com/miffieee/miffieee.github.io/master/Media/greydownicon.png" height="40" width = "60"
+		alt="Next Page" onclick="scrollDownButton" class="navbtnimg" id="downbtn">
+	</div>
 </div>
+
+<!-- Creating black fading bar & up button -->
+<div class="navblackbar" id="upblackbar">
+	<div id="upbutton">
+		<img src="//raw.githubusercontent.com/miffieee/miffieee.github.io/master/Media/greyupicon.png" height="40" width = "60"
+		alt="Previous Page" onclick="scrollUpButton" class="navbtnimg" id="upbtn">
+	</div>
+</div>
+
+<!-- Creating Youtube icon link to Choe U Ram's artwork -->
+<a id="YoutubeIcon" target="_blank" href="https://www.youtube.com/watch?v=NC3kEAkfZSY">
+	<img src="//raw.githubusercontent.com/miffieee/miffieee.github.io/master/Media/YoutubeIcon.svg" height="35" width ="35"
+	alt="Artwork Source: Choe U Ram" title="Background video - URAM Choe: New Urban Species Exhibition">
+</a>
+
+<!-- Creating scrolling text box for content -->
+<div class="scrollallpage">
+	<div id="lefttextbox">
+<!-- Creating textbox #1 - Home -->
+		<div class="transtxtbox" id="transtxtbox1">
+			<article id="Home">
+				<h1 style = "font-size:72px">Alisha Zhang</h1>
+  			<p style = "font-size:28px">-junior front-end developer-
+					<br>-future world traveller-
+					<br>-dessert enthusiast-
+				</p>
+			</article>
+		</div>
+
+<!-- Creating textbox #2 - About -->
+		<div class="transtxtbox" id="transtxtbox2">
+			<article id="about">
+				<h1 style = "font-size:48px">About</h1>
+  			<p style = "font-size:20px">I have a very bright mind and am an
+					extremely fast learner. I am a person that enjoys learning and needs
+					to be constantly challenged. I'm an analytical and logical person.
+					Am friendly and cooperative, looking to work with similar kinds
+					people.
+					I love all things art and design. Looking to build beautiful
+					experiences.
+					Living in Mississauga. </p>
+			</article>
+		</div>
+
+<!-- Creating textbox #3 - Experience -->
+		<div class="transtxtbox" id="transtxtbox3">
+			<article id="Experience">
+				<h1 style = "font-size:48px">Experience</h1>
+  			<p style = "font-size:20px">I am currently working as a forensic data
+					analyst and forensic technology consultant at Ernst & Young in
+				 	Toronto, Canada. AKA I use technology to help solve white collar
+					crime. The most important skill I have gained here is the ability to
+					fearlessly tackle any kind of problem.
+					<br>
+					<br>
+					In my current field we have a saying - <q>Whatever can go wrong, goes
+					wrong</q> and so having encountered various situations with
+					never-seen-before problems with no assistance, few resources, and
+					pressing deadlines, I've developed a confidence and resilience against
+					challenges seen in few.
+					<br>
+					<br>
+					I've grown to a point where I feel that my current job is no longer
+					presenting me with enough interesting challenges and so I am currently
+					seeking a front-end developer role.
+				</p>
+			</article>
+		</div>
+
+<!-- Creating textbox #4 - Education -->
+		<div class="transtxtbox" id="transtxtbox4">
+			<article id="Experience">
+				<h1 style = "font-size:48px">Education</h1>
+	  			<p style = "font-size:20px">I went to a business school called the
+						"Richard Ivey School of Business at Western University."" Right,
+						I know it's not comp sci but my background gives me a valuable skill
+						I wouldn't have been able to learn anywhere else but at a business
+						school - the ability to communicate and connect with others. After
+						all, what good is the work you do if you can't communicate it
+						successfully to the rest of the world?
+						<br>
+						<br>
+						Everything I know about coding is self-taught. I regularly work
+						with SQL and Python at my current job for data ETL, data cleansing,
+						and data visualization. I am currently learning more front-end
+						languages as I expand my portfolio.
+					</p>
+			</article>
+		</div>
+
+<!-- Creating textbox #5 - Hobbies -->
+		<div class="transtxtbox" id="transtxtbox5">
+			<article id="Hobbies">
+				<h1 style = "font-size:48px">Hobbies</h1>
+		 			<ul style = "font-size:20px">
+						<li><b class="boldhobbies">Piano</b> - been playing since I was 5 years old. Passed
+							grade 10 and now just play for fun</li>
+						<li><strong>Dance</strong> - used to be in a dance crew, now I go to classes
+							occassionally</li>
+						<li><strong>My dog & bunny</strong> - my dog's name is Donut and my bunny's
+							name is Cece and yes, they do get along. HEY ALISHA INSERT PIC!!!
+						<li><strong>Art</strong> - I love visiting art museums; one of my bucket
+							list items is to live in Paris for a couple months and wander the
+							Louvre every day until I see every piece of art there. The
+							background video is a robotic lumino sculpture from my favourite
+							artist, Choe U Ram. Check him out
+							<a target="_blank" style="color: #80A3D4"
+							href="http://www.uram.net/eng_new/intro_en.html">here</a>!</li>
+						<li>Basically I'm also really artistic, a great quality to have for
+							a front-end developer!</li>
+					</ul>
+			</article>
+		</div>
+
+<!-- Creating textbox #6 - Contact -->
+		<div class="transtxtbox" id="transtxtbox6">
+			<article id="contact">
+				<h1 style = "font-size:48px">Contact</h1>
+  			<p style = "font-size:20px">Download my resume <a target="blank" style="color: #80A3D4"
+					href="#">here</a>.</p>
+			</article>
+
+		<div class="submitform">
+  		<form action="/action_page.php">
+    		<label for="name">Name</label>
+    		<input type="text" id="fname" name="name" >
+<br>
+				<label for="subject">Subject</label>
+				<input type="text" id="esubject" name="emailsubject">
+
+				<label for="message">Message</label>
+    		<textarea id="message" name="message" style="height:100px"></textarea>
+<br>
+    		<input type="submit" value="Submit">
+  </form>
+</div>
+
+
+	</div>
 </div>
 
 
