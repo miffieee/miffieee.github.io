@@ -208,12 +208,12 @@
 /* Importing raleway font */
 	 @font-face {
 	   font-family: raleway;
-	   src: url(raleway/Raleway-Light.ttf)
+	   src: url("https://rawgit.com/miffieee/miffieee.github.io/master/raleway/Raleway-Light.ttf")
 	 }
 
 	@font-face {
 		font-family: ralewaybold;
-		src: url(raleway/Raleway-Medium.ttf)
+		src: url("https://rawgit.com/miffieee/miffieee.github.io/master/raleway/Raleway-Light.ttf")
 	}
 
 /* Text box & down button # 1 ("Home") formatting */
