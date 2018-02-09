@@ -9,38 +9,52 @@
 
 /* Background video formatting */
 	.backgrounddiv {
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		padding:0;
-		margin:0;
-		right: 0px;
-		bottom: 0px;
-		z-index: -100;
-		overflow: hidden;
+  	position: fixed;
+	  right: 0px;
+  	bottom: 0px;
+  	top: 0px;
+  	left: 0px;
+  	z-index: -100;
+  	overflow: hidden;
+  	padding:0;
+  	margin:0;
 	}
 
 	#choeuram {
-    position: absolute;
-  	right: -570px;
-  	bottom: 0px;
-		overflow: hidden;
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  right: -570px;
+	  bottom: 0px;
 	}
 
+	@media (min-aspect-ratio: 16/9) {
+	  #choeuram {
+	    bottom: -100%;
+	    height: 300%;
+	  }
+	}
+
+	@media (max-aspect-ratio: 16/9) {
+	  #choeuram {
+	    right: -143%;
+	    width: 300%;
+	  }
+	}
 /* Creating the menu */
   #headermenu {
-    position: absolute;
+    position: fixed;
     top: 10px;
     left: 10px;
     width: 10px;
     height: 10px;
-    z-index: 101;
+    z-index: 10;
   }
 
 /* Dropdown menu */
 	.dropdown {
-		position: absolute;
-		margin: 15px;
+		position: fixed;
+		margin: 35px;
 		top: 10px;
 		cursor: pointer;
 	}
@@ -55,7 +69,9 @@
 
   .dropdown-content {
     display: none;
-    position: absolute;
+    position: relative;
+		top: -28px;
+		left: 40px;
     background-color: #1C1C1C;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -66,7 +82,7 @@
   	color: #EFF4FA;
   	padding: 12px 16px;
   	text-decoration: none;
-  	display: block;
+  	display: inline-block;
   	font-family: raleway, helvetica, arial, sans-serif;
   }
 
@@ -74,12 +90,31 @@
 
 	.show {display:block;}
 
+	@media screen and (max-width: 980px) {
+    .dropdown-content {
+      position: relative;
+			top: 0px;
+			left: 0px;
+      min-width: 160px;
+    }
+    .dropdown-content a{
+      display: block;
+    }
+  }
+
 /* Gradient black bar on top and bottom */
 	.navblackbar  {
-		position: absolute;
+		position: fixed;
 		width: 100%;
 		background-color: black;
-		z-index:100;
+		height: 50px;
+		display: none;
+	}
+
+	.navblackbar2  {
+		position: fixed;
+		width: 100%;
+		background-color: black;
 		height: 50px;
 	}
 
@@ -103,6 +138,26 @@
 			);
 	}
 
+	#upblackbar2 {
+		top: 0px;
+		background: linear-gradient(
+			rgba(0,0,0,0.97) 5%,
+			rgba(0,0,0,0.95) 15%,
+			rgba(0,0,0,0.92) 20%,
+			rgba(0,0,0,0.90) 25%,
+			rgba(0,0,0,0.80) 75%,
+			rgba(0,0,0,0.75) 80%,
+			rgba(0,0,0,0.65) 85%,
+			rgba(0,0,0,0.5) 90%,
+			rgba(0,0,0,0.3) 95%,
+			rgba(0,0,0,0.2) 100%
+			);
+		opacity: 0;
+		transition-property: opacity;
+		transition-duration: 0.3s;
+		transition-timing-function: linear;
+	}
+
 	#downblackbar {
 		bottom: 0px;
 		background: linear-gradient(
@@ -118,11 +173,38 @@
 			rgba(0,0,0,0.97) 95%
 			);
 	}
+	#downblackbar2 {
+		bottom: 0px;
+		background: linear-gradient(
+			rgba(0,0,0,0.2) 0%,
+			rgba(0,0,0,0.3) 5%,
+			rgba(0,0,0,0.5) 10%,
+			rgba(0,0,0,0.65) 15%,
+			rgba(0,0,0,0.75) 20%,
+			rgba(0,0,0,0.8) 25%,
+			rgba(0,0,0,0.9) 75%,
+			rgba(0,0,0,0.92) 80%,
+			rgba(0,0,0,0.95) 85%,
+			rgba(0,0,0,0.97) 95%
+			);
+		opacity: 0;
+		transition-property: opacity;
+		transition-duration: 0.3s;
+		transition-timing-function: linear;
+	}
+
+	#upblackbar2:hover {
+		opacity: 1;
+	}
+
+	#downblackbar2:hover {
+		opacity: 1;
+	}
 
 /* Navigation buttons */
 	#downbutton {
-		position: absolute;
-		margin-left: 422px;
+		position: relative;
+		margin-left: 48%;
 		opacity: 0.7;
 		z-index: 70;
 		transition-property: opacity;
@@ -131,8 +213,8 @@
 	}
 
 	#upbutton {
-		position: absolute;
-		margin-left: 422px;
+		position: relative;
+		margin-left: 48%;
 		opacity: 0.7;
 		top: 6%;
 		z-index:70;
@@ -141,20 +223,12 @@
 		transition-timing-function: linear;
 	}
 
-	.navblackbar:hover #downbutton{
-		opacity: 0.4;
-	}
-
-	.navblackbar:hover #upbutton{
-		opacity: 0.4;
-	}
-
 /* Youtube Icon */
 	#YoutubeIcon {
-		position: absolute;
+		position: fixed;
 		bottom: 0px;
 		right: 10px;
-		z-index: 600;
+		z-index: 60;
 	}
 
 	#YoutubeIcon:hover {
@@ -163,37 +237,25 @@
 	}
 
 /* Creating a scrollable container for all of the page */
-	.scrollallpage {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		margin: 0 auto;
-    z-index: 0;
-    overflow: scroll;
-	}
 
-	.scrollallpage::-webkit-scrollbar {
+	::-webkit-scrollbar {
 		display:none;
 	}
 
-/* Left text box */
-  #lefttextbox {
-    width: 700px;
-    height: 5600px;
-  }
-
 /* All text box formatting */
 	div.transtxtbox {
-		position: relative;
+		position: absolute;
 		margin: 0 auto;
-		width: 90%;
-		left: 88px;
+		width: 60%;
+		left: 0;
+		right: 0;
 		padding: 50px;
 		background-color: rgba(0,0,0,0.8);
   	opacity: 1;
   	filter: alpha(opacity=90);
 		font-family: raleway, helvetica, arial, sans-serif;
 		border: 1px solid #494949; /* Temporary border to be deleted */
+		z-index: -10;
 	}
 
 	div.transtxtbox h1 {
@@ -208,17 +270,17 @@
 /* Importing raleway font */
 	 @font-face {
 	   font-family: raleway;
-	   src: url(https://github.com/miffieee/miffieee.github.io/blob/master/raleway/Raleway-Light.ttf)
+	   src: url(raleway/Raleway-Light.ttf)
 	 }
 
 	@font-face {
 		font-family: ralewaybold;
-		src: url(https://github.com/miffieee/miffieee.github.io/blob/master/raleway/Raleway-Light.ttf)
+		src: url(raleway/Raleway-Medium.ttf)
 	}
 
 /* Text box & down button # 1 ("Home") formatting */
 	#transtxtbox1 {
-		top: 120px;
+		top: 20%;
 	}
 
 	#transtxtbox1 article {
@@ -236,7 +298,7 @@
 
 /* Text box & down button #2 ("About") Formatting */
   #transtxtbox2 {
-		top: 500px;
+		top: 140%;
 	}
 
 	#transtxtbox2 h1 {
@@ -252,13 +314,9 @@
   	color: #D2D5DA;
   }
 
-	#downbtndiv2 {
-		top: 600px;
-	}
-
 /* Text box & down button #3 ("Experience") Formatting */
 	#transtxtbox3 {
-		top: 880px;
+		top: 260%;
 	}
 
 	#transtxtbox3 h1 {
@@ -273,7 +331,7 @@
 
 /* Text box & down button #4 ("Education") Formatting */
 	#transtxtbox4 {
-		top: 1260px;
+		top: 380%;
 	}
 
 	#transtxtbox4 h1 {
@@ -288,7 +346,7 @@
 
 /* Text box & down button #5 ("Hobbies") Formatting */
 	#transtxtbox5 {
-		top: 1640px;
+		top: 500%;
 	}
 
 	#transtxtbox5 h1 {
@@ -307,7 +365,7 @@
 
 /* Text box & down button #6 ("Contact") Formatting */
 	#transtxtbox6 {
-		top: 2020px;
+		top: 620%;
 	}
 
 	#transtxtbox6 h1 {
