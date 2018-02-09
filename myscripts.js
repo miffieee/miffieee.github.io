@@ -19,8 +19,22 @@ window.onclick = function(event) {
   }
 }
 
+// Top & bottom gradient bars only appear when scrolling is detected
+$.fn.scrollEnd = function(callback, timeout) {
+  $(this).scroll(function(){
+    var $this = $(this);
+    if ($this.data('scrollTimeout')) {
+      clearTimeout($this.data('scrollTimeout'));
+    }
+    $this.data('scrollTimeout', setTimeout(callback,timeout));
+  });
+};
 
-// Scroll down button
-function scollDownButton() {
-		document.getElementById("downButton").onclick
-}
+window.onscroll = function() {
+  $('#upblackbar, #downblackbar').fadeIn('slow');
+};
+
+$(window).scrollEnd(function(){
+  $('#upblackbar, #downblackbar').fadeOut('slow');
+}, 1000);
+
